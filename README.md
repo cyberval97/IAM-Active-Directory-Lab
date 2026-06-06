@@ -35,8 +35,8 @@ The lab simulates a small enterprise network with departmental users, security g
 
 ## Project Status
 
-- [ ] Install Windows Server
-- [ ] Configure AD DS
+- [X] Install Windows Server
+- [X] Configure AD DS
 - [ ] Create Domain
 - [ ] Create OUs
 - [ ] Create Users
