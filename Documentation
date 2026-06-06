@@ -1,1 +1,168 @@
+# Build Log
 
+## June 5, 2026
+
+### Repository Created
+
+Created GitHub repository:
+IAM-Active-Directory-Lab
+
+### Virtualization Environment
+
+Installed VirtualBox on Windows host machine.
+
+### Planned Lab Architecture
+
+Domain Name:
+cyberlab.local
+
+Systems:
+- DC01 (Windows Server 2022)
+- CLIENT01 (Windows 11)
+
+Objectives:
+- Active Directory
+- Setup DNS
+- Group Policy
+- RBAC
+
+### Windows Server Installation
+
+Installed Windows Server 2022 Desktop Experience on DC01.
+
+Server Name:
+DC01
+
+Virtual Machine Configuration:
+- 4GB RAM
+- 2 vCPUs
+- 80GB Storage
+
+Storage Configuration:
+- Used default Windows partitioning scheme on 80GB virtual disk.
+
+Screenshot:
+screenshot/server-install-complete
+
+### Initial Server Configuration
+
+Successfully installed Windows Server 2022 Desktop Experience.
+
+Actions Performed:
+- Set Administrator password
+- Logged into server
+- Renamed server to DC01
+
+Purpose:
+The server will function as the Domain Controller for the cyberlab.local domain.
+
+### Network Configuration
+
+Configured a static IP address for the Domain Controller.
+
+IP Address:
+192.168.56.10
+
+Subnet:
+255.255.255.0
+
+DNS:
+192.168.56.10
+
+Reason:
+Domain Controllers require a static IP address to ensure reliable DNS and Active Directory functionality.
+
+### Active Directory Forest Deploiyment
+
+Promoted DC01 to a Domain Controller and created a new Active Directory forest.
+
+Domain Name:
+cyberlab.local
+
+Services Installed:
+- Active Directory Domain Services
+- DNS Server
+
+NetBIOS Name:
+CYBERLAB
+
+Outcome: Successfully deployed the first Domain Controller for the cyberlab.local enviornment.
+
+Screenshot:
+screenshot/domain-created
+
+## June 6, 2026
+
+## Identity Structure Configuration
+
+Created Organizational Units to represent departmental divisions
+
+Organizational Units:
+- HR
+- Finance
+- IT
+- Executives
+- Service Accounts
+
+Created Security Groups:
+- HR_Users
+- Finance_Users
+- IT_Admins
+- Executive_Users
+
+Assigned users to security groups based on departemental resonsibilities.
+
+IAM Concepts Demonstrated:
+- Identity Provisioning
+- Role-Based Access Control (RBAC)
+- Group-Based Access Control
+- Active Directory Administration
+- Organizational Unit Design
+
+## File Share and Access Control Configuration
+
+### Objective
+
+Implement Role-Based Access Control (RBAC) using Active Directory security groups and file share permissions.
+
+### Actions Performed
+
+Created departmental shared folders:
+
+- C:\Shares\HR
+- C:\Shares\Finance\
+- C:\Shares\IT
+
+Configured network shares:
+- HR
+- Finance
+- IT
+
+Configured Share Permissions:
+
+- HR_Users --> HR Share
+- Finance_Users --> Finance Share
+- IT_Admins --> IT Share
+
+Configured NTFS Permissions
+
+- HR_Users granted Modify access to HR folder
+- Finance_Users granted Modify access to Finance folder
+- IT_Admins granted Modify access to IT folder
+
+Created test files within each department share to validate access controls.
+
+### Results
+
+Successfully implemented group-based access control using Active Directory security groups.
+
+Verified shared fodlers were accessible through:
+\\DCO1
+
+### IAM Concepts Demonstrated
+
+- Authorization
+- Role-Based Access Control (RBAC)
+- Least Privilege
+- Security Group Management
+- Access Provisioning
